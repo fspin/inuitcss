@@ -75,83 +75,59 @@
  */
 
 // SETTINGS
-@import "settings/example.settings.config";
-@import "settings/settings.core";
-@import "settings/example.settings.global";
-
-
-
-
+@import "00-settings/example.settings.config";
+@import "00-settings/settings.core";
+@import "00-settings/example.settings.global";
 
 // TOOLS
-@import "tools/tools.font-size";
-@import "tools/tools.clearfix";
-@import "tools/tools.hidden";
+@import "01-tools/tools.font-size";
+@import "01-tools/tools.clearfix";
+@import "01-tools/tools.hidden";
 @import "node_modules/sass-mq/mq";
 
-
-
-
-
 // GENERIC
-@import "generic/generic.box-sizing";
-@import "generic/generic.normalize";
-@import "generic/generic.reset";
-@import "generic/generic.shared";
-
-
-
-
+@import "02-generic/generic.box-sizing";
+@import "02-generic/generic.normalize";
+@import "02-generic/generic.reset";
+@import "02-generic/generic.shared";
 
 // ELEMENTS
-@import "elements/elements.page";
-@import "elements/elements.headings";
-@import "elements/elements.images";
-@import "elements/elements.tables";
-
-
-
-
+@import "03-elements/elements.page";
+@import "03-elements/elements.headings";
+@import "03-elements/elements.images";
+@import "03-elements/elements.tables";
 
 // OBJECTS
 //
 // Uncomment and add to this section as necessary.
-@import "objects/objects.wrapper";
-@import "objects/objects.layout";
-@import "objects/objects.media";
-@import "objects/objects.flag";
-@import "objects/objects.list-bare";
-@import "objects/objects.list-inline";
-@import "objects/objects.box";
-@import "objects/objects.block";
-@import "objects/objects.ratio";
-@import "objects/objects.crop";
-@import "objects/objects.table";
-@import "objects/objects.pack";
-
-
-
-
+@import "04-objects/objects.wrapper";
+@import "04-objects/objects.layout";
+@import "04-objects/objects.media";
+@import "04-objects/objects.flag";
+@import "04-objects/objects.list-bare";
+@import "04-objects/objects.list-inline";
+@import "04-objects/objects.box";
+@import "04-objects/objects.block";
+@import "04-objects/objects.ratio";
+@import "04-objects/objects.crop";
+@import "04-objects/objects.table";
+@import "04-objects/objects.pack";
 
 // COMPONENTS
 //
 // Build and include your project’s UI components here.
-@import "components/example.components.buttons";
-
-
-
-
+@import "05-components/example.components.buttons";
 
 // UTILITIES
-@import "utilities/utilities.clearfix";
+@import "06-utilities/utilities.clearfix";
 
 // Be aware that enabling offsets produces a large chunk of classes which might
 // bloat your CSS, depending of the amount of breakpoints you defined.
 // Only set this to `true` if you are absolutely sure about what you are doing.
 $inuit-offsets: true;
-@import "utilities/utilities.widths";
-@import "utilities/utilities.headings";
-@import "utilities/utilities.spacings";
-@import "utilities/utilities.responsive-spacings";
-@import "utilities/utilities.print";
-@import "utilities/utilities.hide";
+@import "06-utilities/utilities.widths";
+@import "06-utilities/utilities.headings";
+@import "06-utilities/utilities.spacings";
+@import "06-utilities/utilities.responsive-spacings";
+@import "06-utilities/utilities.print";
+@import "06-utilities/utilities.hide";
