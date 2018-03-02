@@ -75,9 +75,9 @@
  */
 
 // SETTINGS
-@import "00-settings/example.settings.config";
+@import "00-settings/settings.config";
 @import "00-settings/settings.core";
-@import "00-settings/example.settings.global";
+@import "00-settings/settings.global";
 
 // TOOLS
 @import "01-tools/tools.font-size";
@@ -116,7 +116,7 @@
 // COMPONENTS
 //
 // Build and include your project’s UI components here.
-@import "05-components/example.components.buttons";
+@import "05-components/components.buttons";
 
 // UTILITIES
 @import "06-utilities/utilities.clearfix";
