@@ -9,7 +9,8 @@
         "scss-lint": "stylelint '**/*.scss' --syntax scss || true",
         "build:css": "run-s scss-compile scss-autoprefixer",
         "watch:css": "onchange '**/*.scss' -e '_docroot/' -v -- npm run build:css",
-        "test": "npm run scss-lint && mocha test/run.js"
+        "test": "npm run scss-lint && mocha test/run.js",
+        "start": "npm run watch:css"
     },
     "repository": {
         "type": "git",
