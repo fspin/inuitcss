@@ -11,3 +11,28 @@
 
 $global-radius: 3px !default;
 $global-transition: all 300ms ease-in-out !default;
+
+
+///* ========================================================================
+//   _utilities.spacings:
+//   ========================================================================
+
+// .u-margin-top-medium, .u-padding-left-large, .u-padding-medium, .u-padding-right-none, .u-padding-horizontal-medium, enz...
+$inuit-spacing-sizes: (
+    "-tiny": $inuit-global-spacing-unit-tiny,
+    "-small": $inuit-global-spacing-unit-small,
+    "-medium": $inuit-global-spacing-unit,
+    "-large": $inuit-global-spacing-unit-large,
+    "-huge": $inuit-global-spacing-unit-huge,
+    "-none": 0
+) !default;
+
+
+///* ========================================================================
+//   _utilities.widths:
+//   ========================================================================
+
+// $inuit-fractions; .u-1-of-2, .u-2-of-5, enz... > 1 2 3 4 5 !default;
+// $inuit-offsets; .u-push-1-of-3, .u-pull-2-of-4, enz... > true
+$inuit-widths-delimiter: '-of-'; // use: u-1-of-2 // or // u-push-2-of-5
+$inuit-widths-breakpoint-separator: '-at-'; // use: u-1-of-1-at-mobile // or // u-1-of-1-at-desktop
