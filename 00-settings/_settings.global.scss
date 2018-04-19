@@ -8,10 +8,74 @@
 
 
 // Standardise some UI treatments.
-
 $global-radius: 3px !default;
 $global-transition: all 300ms ease-in-out !default;
 
+
+// Breakpoints (https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862#.necmuodfd)
+$mq-breakpoints: (
+  small:  600px,
+  medium:  900px,
+  large: 1200px,
+  huge: 1800px
+);
+
+// $mq-show-breakpoints: (small, medium, large, huge);
+
+
+
+///* ========================================================================
+//   _objects.ratio:
+//   ========================================================================
+//   $inuit-ratios: (
+//     "2\\:1"         : (2:1),
+//     "4-by-3"        : (4:3),
+//     "full-hd"       : (16:9),
+//     "card-image"    : (2:3),
+//     "golden-ratio"  : (1.618:1) -> non-integers are okay
+//   ) !default;
+//
+// http://alistapart.com/article/creating-intrinsic-ratios-for-video
+// 1. Default is a 1:1 ratio (i.e. a perfect square).
+
+$inuit-ratios: (
+  "2-by-1"   : (2:1),
+  "4-by-3"   : (4:3),
+  "16-by-9"  : (16:9)
+) !default;
+
+
+///* ========================================================================
+//   _objects.responsive-wrapper:
+//   ========================================================================
+
+$inuit-wrapper-width-tiny: 400px;
+$inuit-wrapper-width-small: 600px;
+$inuit-wrapper-width-medium: 900px;
+$inuit-wrapper-width-large: 1200px;
+$inuit-wrapper-width-huge: 1800px;
+$inuit-wrapper-breakpoint: large;
+
+
+
+///* ========================================================================
+//   _utilities.responsive-spacings:
+//   ========================================================================
+
+/**
+* This would bring us the following classes:
+ *
+ *   .u-margin-small@small {}
+ *   .u-margin-small@medium {}
+ *   .u-margin-small@large {}
+ *   .u-margin-small@huge {}
+ *   .u-margin-bottom-small@small {}
+ *   .u-margin-bottom-small@medium {}
+ *   .u-margin-bottom-small@large {}
+ *   .u-margin-bottom-small@huge {}
+ *
+ *   Not active by default!
+ */
 
 ///* ========================================================================
 //   _utilities.spacings:
@@ -32,7 +96,13 @@ $inuit-spacing-sizes: (
 //   _utilities.widths:
 //   ========================================================================
 
+$inuit-widths-delimiter: '-of-'; // use: u-1-of-2, u-push-2-of-5
+$inuit-widths-breakpoint-separator: '-at-'; // use: u-1-of-1-at-small, u-1-of-1-at-large
+
 // $inuit-fractions; .u-1-of-2, .u-2-of-5, enz... > 1 2 3 4 5 !default;
-// $inuit-offsets; .u-push-1-of-3, .u-pull-2-of-4, enz... > true
-$inuit-widths-delimiter: '-of-'; // use: u-1-of-2 // or // u-push-2-of-5
-$inuit-widths-breakpoint-separator: '-at-'; // use: u-1-of-1-at-mobile // or // u-1-of-1-at-desktop
+
+// Be aware that enabling offsets produces a large chunk of classes which might
+// bloat your CSS, depending of the amount of breakpoints you defined.
+// Only set this to `true` if you are absolutely sure about what you are doing.
+// Use: .u-push-1-of-3, .u-pull-2-of-4, enz... > if is true
+// $inuit-offsets: true;
