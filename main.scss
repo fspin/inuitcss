@@ -120,10 +120,15 @@
 @import "05-components/components.buttons";
 
 // UTILITIES
-@import "06-utilities/utilities.clearfix";
-@import "06-utilities/utilities.widths";
-@import "06-utilities/utilities.headings";
-@import "06-utilities/utilities.spacings";
-@import "06-utilities/utilities.responsive-spacings";
-@import "06-utilities/utilities.print";
-@import "06-utilities/utilities.hide";
+@import "utilities/utilities.clearfix";
+
+// Be aware that enabling offsets produces a large chunk of classes which might
+// bloat your CSS, depending on the amount of breakpoints you defined.
+// Only set this to `true` if you are absolutely sure about what you are doing.
+// $inuit-offsets: true;
+@import "utilities/utilities.widths";
+@import "utilities/utilities.headings";
+@import "utilities/utilities.spacings";
+@import "utilities/utilities.responsive-spacings";
+@import "utilities/utilities.print";
+@import "utilities/utilities.hide";
