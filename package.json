@@ -4,6 +4,7 @@
     "description": "Extensible, scalable, Sass-based, OOCSS framework for large and long-lasting UI projects.",
     "main": "main.scss",
     "scripts": {
+        "prestart": "source ~/.nvm/nvm.sh; nvm use",
         "scss-compile": "node-sass --source-map true main.scss -o css/",
         "scss-autoprefixer": "postcss css/*.css --use autoprefixer -d css",
         "scss-lint": "stylelint '**/*.scss' --syntax scss || true",
