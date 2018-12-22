@@ -20,7 +20,7 @@ $inuit-global-baseline:     6px !default;
 
 $inuit-global-spacing-unit-factor-tiny:   1 !default;   // 6px
 $inuit-global-spacing-unit-factor-small:  2 !default;   // 12px
-$inuit-global-spacing-unit-factor:        4 !default;   // 24px
+$inuit-global-spacing-unit-factor-medium: 4 !default;   // 24px
 $inuit-global-spacing-unit-factor-large:  8 !default;   // 48px
 $inuit-global-spacing-unit-factor-huge:   16 !default;  // 96px
 
@@ -30,18 +30,18 @@ $inuit-global-spacing-unit-factor-huge:   16 !default;  // 96px
 // It is not recommended that you modify these following variables
 // (it can break your vertical rhythm), but if you need to, you can.
 
-$inuit-global-spacing-unit:       $inuit-global-baseline * $inuit-global-spacing-unit-factor !default;        // 6 * 4 = 24
-$inuit-global-spacing-unit-tiny:  $inuit-global-baseline * $inuit-global-spacing-unit-factor-tiny !default;   // 6 * 1 = 6
-$inuit-global-spacing-unit-small: $inuit-global-baseline * $inuit-global-spacing-unit-factor-small !default;  // 6 * 2 = 12
-$inuit-global-spacing-unit-large: $inuit-global-baseline * $inuit-global-spacing-unit-factor-large !default;  // 6 * 8 = 48
-$inuit-global-spacing-unit-huge:  $inuit-global-baseline * $inuit-global-spacing-unit-factor-huge !default;   // 6 * 16 = 96
+$inuit-global-spacing-unit-medium: $inuit-global-baseline * $inuit-global-spacing-unit-factor-medium !default;        // 6 * 4 = 24
+$inuit-global-spacing-unit-tiny:   $inuit-global-baseline * $inuit-global-spacing-unit-factor-tiny !default;   // 6 * 1 = 6
+$inuit-global-spacing-unit-small:  $inuit-global-baseline * $inuit-global-spacing-unit-factor-small !default;  // 6 * 2 = 12
+$inuit-global-spacing-unit-large:  $inuit-global-baseline * $inuit-global-spacing-unit-factor-large !default;  // 6 * 8 = 48
+$inuit-global-spacing-unit-huge:   $inuit-global-baseline * $inuit-global-spacing-unit-factor-huge !default;   // 6 * 16 = 96
 
 
 
 // Base typographical styles.
 
 $inuit-global-font-size:    16px !default;
-$inuit-global-line-height:  $inuit-global-spacing-unit !default; // 24px
+$inuit-global-line-height:  $inuit-global-spacing-unit-medium !default; // 24px
 
 
 

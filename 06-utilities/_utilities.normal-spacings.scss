@@ -31,7 +31,7 @@ $inuit-spacing-properties: (
 ) !default;
 
 $inuit-spacing-sizes: (
-  null: $inuit-global-spacing-unit,
+  "-medium": $inuit-global-spacing-unit-medium,
   "-tiny": $inuit-global-spacing-unit-tiny,
   "-small": $inuit-global-spacing-unit-small,
   "-large": $inuit-global-spacing-unit-large,

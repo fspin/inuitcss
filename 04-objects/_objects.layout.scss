@@ -73,8 +73,8 @@
   margin:  0; /* [2] */
   padding: 0; /* [2] */
   list-style: none; /* [1] */
-  margin-left: -$inuit-global-spacing-unit; /* [4] */
-  margin-right: -$inuit-global-spacing-unit; /* [4] */
+  margin-left: -$inuit-global-spacing-unit-medium;  /* [4] */
+  margin-right: -$inuit-global-spacing-unit-medium; /* [4] */
 }
 
 
@@ -85,8 +85,8 @@
 
   .o-layout__item {
     width: 100%; /* [1] */
-    padding-left: $inuit-global-spacing-unit; /* [2] */
-    padding-right: $inuit-global-spacing-unit; /* [2] */
+    padding-left: $inuit-global-spacing-unit-medium;  /* [2] */
+    padding-right: $inuit-global-spacing-unit-medium; /* [2] */
   }
 
 

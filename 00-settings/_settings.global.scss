@@ -1,3 +1,9 @@
+// $inuit-global-baseline: 4px;
+// $inuit-global-font-size: 13px;
+
+@import 'settings.core';
+// @import 'settings.colors';
+
 ///* ========================================================================
 //   #GLOBAL
 //   ======================================================================== */
@@ -14,6 +20,7 @@ $global-transition: all 300ms ease-in-out !default;
 
 // Breakpoints (https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862#.necmuodfd)
 $mq-breakpoints: (
+  tiny: 400px,
   small:  600px,
   medium:  900px,
   large: 1200px,
@@ -85,10 +92,11 @@ $inuit-wrapper-breakpoint: large;
 $inuit-spacing-sizes: (
     "-tiny": $inuit-global-spacing-unit-tiny,
     "-small": $inuit-global-spacing-unit-small,
-    "-medium": $inuit-global-spacing-unit,
+    "-medium": $inuit-global-spacing-unit-medium,
     "-large": $inuit-global-spacing-unit-large,
     "-huge": $inuit-global-spacing-unit-huge,
-    "-none": 0
+    "-none": 0,
+    '-auto': auto
 ) !default;
 
 

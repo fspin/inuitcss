@@ -42,7 +42,7 @@
 
   .o-flag__img {
     width: 1px; /* [1] */
-    padding-right: $inuit-global-spacing-unit;
+    padding-right: $inuit-global-spacing-unit-medium;
 
     /**
      * 1. Fixes problem with images disappearing.
@@ -195,7 +195,7 @@
 
   > .o-flag__img {
     padding-right: 0; /* [3] */
-    padding-left: $inuit-global-spacing-unit; /* [3] */
+    padding-left: $inuit-global-spacing-unit-medium  /* [3] */
   }
 
 }

@@ -12,7 +12,7 @@
 .o-box {
   @include inuit-clearfix();
   display: block; /* [1] */
-  padding: $inuit-global-spacing-unit;
+  padding: $inuit-global-spacing-unit-medium;
 
   > :last-child {
     margin-bottom: 0;

@@ -1,0 +1,70 @@
+/* ==========================================================================
+   # FLEXBOX
+   ========================================================================== */
+
+/**
+ * Creates even spaced responsive rows using the default InuitCSS spacing variables.
+ *
+ *   <div class="o-flex o-flex--wrap">
+ *
+ *
+ *   </div>
+ *
+ */
+
+.o-flex {
+    display: flex;
+}
+
+.o-flex--column {
+    flex-direction: column;
+}
+
+.o-flex--wrap {
+    flex-wrap: wrap;
+}
+
+.o-flex--align-center {
+    align-items: center;
+}
+
+.o-flex--align-start {
+    align-items: flex-start;
+}
+
+.o-flex--align-end {
+    align-items: flex-end;
+}
+
+.o-flex--justify-center {
+    justify-content: center;
+}
+
+.o-flex--justify-space-around {
+    justify-content: space-around;
+}
+
+.o-flex--justify-space-between {
+    justify-content: space-between;
+}
+
+.o-flex--justify-end {
+    justify-content: flex-end;
+}
+
+.o-flex--justify-start{
+    justify-content: flex-start;
+}
+
+
+.o-flex--align-self-center {
+    align-self: center;
+}
+
+.o-flex--align-self-start {
+    align-self: flex-start;
+}
+
+.o-flex--align-self-end {
+    align-self: flex-end;
+}

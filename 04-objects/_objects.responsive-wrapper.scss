@@ -46,8 +46,8 @@ $inuit-wrapper-breakpoint: desktop !default;
    ========================================================================== */
 
 .o-wrapper {
-  padding-right: $inuit-global-spacing-unit;
-  padding-left:  $inuit-global-spacing-unit;
+  padding-right: $inuit-global-spacing-unit-medium;
+  padding-left:  $inuit-global-spacing-unit-medium;
   margin-right: auto;
   margin-left:  auto;
   max-width: $inuit-wrapper-width;

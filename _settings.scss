@@ -74,56 +74,14 @@
  * Hide.................Helper classes to hide content
  */
 
-// SETTINGS & TOOLS
-@import '_settings.scss';
+// SETTINGS
+@import "00-settings/settings.config";
+// @import "00-settings/settings.core";
+@import "00-settings/settings.global";
 
-// GENERIC
-@import "02-generic/generic.box-sizing";
-@import "02-generic/generic.normalize";
-@import "02-generic/generic.reset";
-@import "02-generic/generic.shared";
-
-// ELEMENTS
-@import "03-elements/elements.page";
-@import "03-elements/elements.headings";
-@import "03-elements/elements.images";
-@import "03-elements/elements.tables";
-
-// OBJECTS
-//
-// Uncomment and add to this section as necessary.
-// @import "04-objects/objects.wrapper";
-@import "04-objects/objects.block";
-@import "04-objects/objects.box";
-@import "04-objects/objects.crop";
-@import "04-objects/objects.flag";
-@import '04-objects/objects.flex';
-@import "04-objects/objects.layout";
-@import "04-objects/objects.list-bare";
-@import "04-objects/objects.list-inline";
-@import "04-objects/objects.media";
-@import "04-objects/objects.pack";
-@import "04-objects/objects.ratio";
-@import "04-objects/objects.responsive-wrapper";
-@import "04-objects/objects.row";
-@import "04-objects/objects.table";
-@import "04-objects/objects.wrapper";
-
-// COMPONENTS
-//
-// Build and include your project’s UI components here.
-@import "05-components/components.buttons";
-
-// UTILITIES
-@import "06-utilities/utilities.clearfix";
-
-// Be aware that enabling offsets produces a large chunk of classes which might
-// bloat your CSS, depending on the amount of breakpoints you defined.
-// Only set this to `true` if you are absolutely sure about what you are doing.
-// $inuit-offsets: true;
-@import "06-utilities/utilities.headings";
-@import "06-utilities/utilities.hide";
-@import "06-utilities/utilities.print";
-@import "06-utilities/utilities.normal-spacings";
-@import "06-utilities/utilities.responsive-spacings";
-@import "06-utilities/utilities.widths";
+// TOOLS
+@import "01-tools/tools.aliases";
+@import "01-tools/tools.clearfix";
+@import "01-tools/tools.font-size";
+@import "01-tools/tools.hidden";
+@import "node_modules/sass-mq/mq";
