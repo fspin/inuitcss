@@ -4,7 +4,6 @@
     "description": "Extensible, scalable, Sass-based, OOCSS framework for large and long-lasting UI projects.",
     "main": "main.scss",
     "scripts": {
-        "prestart": "source ~/.nvm/nvm.sh; nvm use",
         "scss-compile": "node-sass --source-map true main.scss -o css/",
         "scss-autoprefixer": "postcss css/*.css --use autoprefixer -d css",
         "build:css": "run-s scss-compile scss-autoprefixer",
@@ -54,7 +53,7 @@
         "stylelint-scss": "^3.3.1"
     },
     "browserslist": [
-        "last 2 versions",
+        ">0.25%",
         "ie 9-11",
         "ios 8-12",
         "safari 9",
