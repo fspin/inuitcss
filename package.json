@@ -4,15 +4,15 @@
     "description": "Extensible, scalable, Sass-based, OOCSS framework for large and long-lasting UI projects.",
     "main": "main.scss",
     "scripts": {
-        "scss-compile": "node-sass --source-map true main.scss -o css/",
+        "scss-compile": "node-sass --source-map true _scss/main.scss -o css/",
         "scss-autoprefixer": "postcss css/*.css --use autoprefixer -d css",
         "build:css": "run-s scss-compile scss-autoprefixer",
-        "watch:css": "onchange '**/*.scss' -e '_docroot/' -v -- npm run build:css",
+        "watch:css": "onchange '_scss/**/*.scss' -e '_docroot/' -v -- npm run build:css",
         "start": "npm run watch:css",
         "test": "npm run scss-lint && mocha test/run.js",
-        "scss-lint": "stylelint '**/*.scss' --syntax scss || true",
-        "test-remote": "npm run lint && mocha test/run.js",
-        "lint-remote": "./node_modules/.bin/stylelint \"**/*.scss\" --syntax scss"
+        "scss-lint": "stylelint '_scss/**/*.scss' --syntax scss || true",
+        "test-remote": "npm run scss-lint && mocha test/run.js",
+        "lint-remote": "./node_modules/.bin/stylelint \"_scss/**/*.scss\" --syntax scss"
     },
     "repository": {
         "type": "git",
@@ -38,19 +38,19 @@
     },
     "homepage": "https://github.com/inuitcss/inuitcss#readme",
     "dependencies": {
-        "autoprefixer": "^8.2.0",
+        "autoprefixer": "^9.4.6",
         "sass-mq": "^5.0.0"
     },
     "devDependencies": {
         "glob": "^7.1.3",
         "mocha": "^5.2.0",
-        "node-sass": "^4.9.4",
-        "npm-run-all": "^4.1.2",
-        "onchange": "^3.3.0",
-        "postcss-cli": "^5.0.0",
+        "node-sass": "^4.11.0",
+        "npm-run-all": "^4.1.5",
+        "onchange": "^5.2.0",
+        "postcss-cli": "^6.1.1",
         "sass-true": "^4.0.0",
-        "stylelint": "^9.6.0",
-        "stylelint-scss": "^3.3.1"
+        "stylelint": "^9.10.1",
+        "stylelint-scss": "^3.5.1"
     },
     "browserslist": [
         ">0.25%",

@@ -75,7 +75,7 @@
  */
 
 // SETTINGS & TOOLS
-@import '_settings.scss';
+@import "settings.scss";
 
 // GENERIC
 @import "02-generic/generic.box-sizing";
@@ -92,7 +92,6 @@
 // OBJECTS
 //
 // Uncomment and add to this section as necessary.
-// @import "04-objects/objects.wrapper";
 @import "04-objects/objects.block";
 @import "04-objects/objects.box";
 @import "04-objects/objects.crop";
