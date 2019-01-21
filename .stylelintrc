@@ -3,9 +3,10 @@
     "stylelint-scss"
   ],
   "ignoreFiles": [
-    "./02-generic/_generic.normalize.scss",
-    "./01-tools/*.scss",
-    "./00-settings/*.scss",
+    "./_scss/02-generic/_generic.normalize.scss",
+    "./_scss/01-tools/*.scss",
+    "./_scss/00-settings/*.scss",
+    "./_scss/_settings.scss",
     "./test/*.scss"
   ],
   "rules": {
