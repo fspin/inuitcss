@@ -60,7 +60,7 @@ $inuit-font-size-h6:  16px !default;
 // http://alistapart.com/article/creating-intrinsic-ratios-for-video
 // 1. Default is a 1:1 ratio (i.e. a perfect square).
 
-$inuit-crops: (
+$inuit-ratios: (
   "2-by-1"       : (2:1),
   "4-by-3"       : (4:3),
   "16-by-9"      : (16:9),
@@ -142,6 +142,6 @@ $inuit-fractions: 1 2 3 4 5 6 !default;
 // bloat your CSS, depending of the amount of breakpoints you defined.
 // Only set this to `true` if you are absolutely sure about what you are doing.
 // Use: .u-push-1-of-3, .u-pull-2-of-4, enz... > if is true
-// $inuit-offsets: true;
+// $inuit-offsets: false;
 
 $utility-colors: true;

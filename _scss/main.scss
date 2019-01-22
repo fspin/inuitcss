@@ -95,7 +95,8 @@
 @import "04-objects/objects.block";
 @import "04-objects/objects.box";
 @import "04-objects/objects.crop";
-// @import "04-objects/objects.flex";
+
+@import "04-objects/objects.flex";
 
 // Original from inuitcss:
 // @import "04-objects/objects.layout";
@@ -108,7 +109,10 @@
 // @import "04-objects/objects.flag";
 // media-modified includes also a flag version
 @import "04-objects/objects.media-modified";
-@import "04-objects/objects.pack";
+
+// Original from inuitcss: We are not using it,
+// because we can flexbox all the things
+// @import "04-objects/objects.pack";
 @import "04-objects/objects.ratio";
 @import "04-objects/objects.row";
 @import "04-objects/objects.table";
@@ -126,10 +130,6 @@
 @import "06-utilities/utilities.clearfix";
 @import "06-utilities/utilities.colors";
 
-// Be aware that enabling offsets produces a large chunk of classes which might
-// bloat your CSS, depending on the amount of breakpoints you defined.
-// Only set this to `true` if you are absolutely sure about what you are doing.
-// $inuit-offsets: true;
 @import "06-utilities/utilities.headings";
 @import "06-utilities/utilities.hide";
 @import "06-utilities/utilities.print";
