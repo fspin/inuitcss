@@ -5,19 +5,22 @@
 /**
 * Place any image- and text-like content side-by-side, as per:
 * http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+*
+* Modified with this as inspiration:
+* https://philipwalton.github.io/solved-by-flexbox/demos/media-object/
 */
 
-.o-media-mod {
+.o-media {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
 }
 
-  .o-media-mod__img {
+  .o-media__img {
     margin-right: $inuit-global-spacing-unit-medium;
   }
 
-  .o-media-mod__body {
+  .o-media__body {
     flex: 1;
 
     &,
@@ -31,14 +34,14 @@
 /* Vertical Alignment
 ========================================================================== */
 /**
-* Default are the children elements top aligned
+* Default: top aligned == flex-start
 */
 
-  .o-media-mod--middle {
+  .o-media--middle {
     align-items: center;
   }
 
-  .o-media-mod--bottom {
+  .o-media--bottom {
     align-items: flex-end;
   }
 
@@ -50,60 +53,60 @@
 * reversible options for all available sizes.
 */
 
-.o-media-mod--flush {
-  > .o-media-mod__img {
+.o-media--flush {
+  > .o-media__img {
     margin-right: 0;
     margin-left: 0;
   }
 }
 
 
-.o-media-mod--tiny {
-  > .o-media-mod__img {
+.o-media--tiny {
+  > .o-media__img {
     margin-right: $inuit-global-spacing-unit-tiny;
   }
 
-  &.o-media-mod--reverse {
-    > .o-media-mod__body {
+  &.o-media--reverse {
+    > .o-media__body {
       margin-right: $inuit-global-spacing-unit-tiny;
     }
   }
 }
 
 
-.o-media-mod--small {
-  > .o-media-mod__img {
+.o-media--small {
+  > .o-media__img {
     margin-right: $inuit-global-spacing-unit-small;
   }
 
-  &.o-media-mod--reverse {
-    > .o-media-mod__body {
+  &.o-media--reverse {
+    > .o-media__body {
       margin-right: $inuit-global-spacing-unit-small;
     }
   }
 }
 
 
-.o-media-mod--large {
-  > .o-media-mod__img {
+.o-media--large {
+  > .o-media__img {
     margin-right: $inuit-global-spacing-unit-large;
   }
 
-  &.o-media-mod--reverse {
-    > .o-media-mod__body {
+  &.o-media--reverse {
+    > .o-media__body {
       margin-right: $inuit-global-spacing-unit-large;
     }
   }
 }
 
 
-.o-media-mod--huge {
-  > .o-media-mod__img {
+.o-media--huge {
+  > .o-media__img {
     margin-right: $inuit-global-spacing-unit-huge;
   }
 
-  &.o-media-mod--reverse {
-    > .o-media-mod__body {
+  &.o-media--reverse {
+    > .o-media__body {
       margin-right: $inuit-global-spacing-unit-huge;
     }
   }
@@ -113,13 +116,13 @@
 /* Reversed media objects
 ========================================================================== */
 
-.o-media-mod--reverse {
-  > .o-media-mod__img {
+.o-media--reverse {
+  > .o-media__img {
     order: 1;
     margin-right: 0;
   }
 
-  > .o-media-mod__body {
+  > .o-media__body {
     margin-right: $inuit-global-spacing-unit-medium;
   }
 }
