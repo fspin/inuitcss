@@ -1,0 +1,99 @@
+/* ==========================================================================
+   #THEME Colors
+   ========================================================================== */
+
+/**
+ * Utility classes to put specific spacing values onto elements. The below loop
+ * will generate us a suite of classes like:
+ *
+ *   .u-color-primary {}
+ *   .u-bgcolor-secondary-light {}
+ */
+
+$utility-colors: false !default;
+
+$color-property: (
+    'color': 'color',
+    'bgcolor': 'background-color',
+);
+
+$colors-list: (
+    '-neutral'           : $color-neutral,
+    '-primary'           : $color-primary,
+    '-secondary'         : $color-secondary,
+    '-tertiary'          : $color-tertiary,
+    // '-accent'            : $color-accent,
+    '-success'           : $color-success,
+    '-error'             : $color-error,
+    '-notice'            : $color-notice,
+);
+
+
+$variations: (
+    null: null,
+    '-xlight': '-xlight',
+    '-light': '-light',
+    '-dark': '-dark',
+);
+
+@if ($utility-colors == true) {
+
+    @each $property-namespace, $property in $color-property {
+
+        @each $color-namespace, $colors-descriptions in $colors-list {
+
+            @each $variation-namespace, $variation in $variations {
+
+                .u-#{$property-namespace}#{$color-namespace}#{$variation-namespace} {
+
+
+                    @if $variation == '-xlight' {
+
+                        @if $color-namespace == '-neutral' {
+                            #{$property}: tint($colors-descriptions, 90%);
+
+                        } @else if $color-namespace == '-primary' {
+                            #{$property}: tint($colors-descriptions, 45%);
+
+                        } @else {
+                            #{$property}: tint($colors-descriptions, 30%);
+
+                        }
+
+                     } @else if $variation == '-light' {
+
+                         @if $color-namespace == '-neutral' {
+                             #{$property}: tint($colors-descriptions, 85%);
+
+                         } @else if $color-namespace == '-primary' {
+                             #{$property}: tint($colors-descriptions, 25%);
+
+                         } @else {
+                             #{$property}: tint($colors-descriptions, 10%);
+
+                         }
+
+
+                     } @else if $variation == '-dark' {
+
+                         @if $color-namespace == '-primary' {
+                             #{$property}: shade($colors-descriptions, 20%);
+
+                         } @else {
+                             #{$property}: shade($colors-descriptions, 10%);
+
+                         }
+
+                     } @else {
+
+                       #{$property}: #{$colors-descriptions};
+                     }
+
+                }
+
+            }
+
+        }
+
+    }
+}

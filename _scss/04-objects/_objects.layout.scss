@@ -1,7 +1,5 @@
 /* ==========================================================================
-   #FLEXBOX LAYOUT
-   ---
-   NOTICE: Adapted from https://github.com/inuitcss/inuitcss/blob/develop/objects/_objects.layout.scss
+   #LAYOUT
    ========================================================================== */
 
 /**
@@ -52,57 +50,86 @@
  * There are plenty more options available to us: explore them below.
  */
 
+// By default we use the `font-size: 0;` trick to remove whitespace between
+// items. Set this to true in order to use a markup-based strategy like
+// commenting out whitespace or minifying HTML.
+$inuit-use-markup-fix: false !default;
 
 
 
 
-/* Default/mandatory classes.
+
+/* Default/mandatory classes
    ========================================================================== */
 
 /**
  * 1. Allows us to use the layout object on any type of element.
  * 2. We need to defensively reset any box-model properties.
- * 3. Define flexbox settings to allow grid-like behaviour
- * 4. Use the negative margin trick for multi-row grids:
+ * 3. Use the negative margin trick for multi-row grids:
+ *    http://csswizardry.com/2011/08/building-better-grid-systems/
  */
 
 .o-layout {
-  display: flex; /* [3] */
-  align-items: stretch; /* [3] */
-  flex-wrap: wrap; /* [3] */
+  display: block; /* [1] */
   margin:  0; /* [2] */
   padding: 0; /* [2] */
   list-style: none; /* [1] */
-  margin-left: -$inuit-global-spacing-unit-medium;  /* [4] */
-  margin-right: -$inuit-global-spacing-unit-medium; /* [4] */
+  margin-left: -$inuit-global-spacing-unit-medium; /* [3] */
+
+  @if ($inuit-use-markup-fix == false) {
+    font-size: 0;
+  }
+
 }
 
-
   /**
-   * 1. By default, all layout items are full-width (mobile first).
-   * 2. Gutters provided by left padding:
+   * 1. Required in order to combine fluid widths with fixed gutters.
+   * 2. Allows us to manipulate grids vertically, with text-level properties,
+   *    etc.
+   * 3. Default item alignment is with the tops of each other, like most
+   *    traditional grid/layout systems.
+   * 4. By default, all layout items are full-width (mobile first).
+   * 5. Gutters provided by left padding:
+   *    http://csswizardry.com/2011/08/building-better-grid-systems/
+   * 6. Fallback for old IEs not supporting `rem` values.
    */
 
   .o-layout__item {
-    width: 100%; /* [1] */
-    padding-left: $inuit-global-spacing-unit-medium;  /* [2] */
-    padding-right: $inuit-global-spacing-unit-medium; /* [2] */
+    box-sizing: border-box; /* [1] */
+    display: inline-block; /* [2] */
+    vertical-align: top; /* [3] */
+    width: 100%; /* [4] */
+    padding-left: $inuit-global-spacing-unit-medium; /* [5] */
+
+    @if ($inuit-use-markup-fix == false) {
+      font-size: $inuit-global-font-size; /* [6] */
+      font-size: 1rem;
+    }
+
   }
 
 
 
 
 
-/* Gutter size modifiers.
+/* Gutter size modifiers
    ========================================================================== */
+
+.o-layout--flush {
+  margin-left: 0;
+
+  > .o-layout__item {
+    padding-left: 0;
+  }
+
+}
+
 
 .o-layout--tiny {
   margin-left: -$inuit-global-spacing-unit-tiny;
-  margin-right: -$inuit-global-spacing-unit-tiny;
 
   > .o-layout__item {
     padding-left: $inuit-global-spacing-unit-tiny;
-    padding-right: $inuit-global-spacing-unit-tiny;
   }
 
 }
@@ -110,11 +137,9 @@
 
 .o-layout--small {
   margin-left: -$inuit-global-spacing-unit-small;
-  margin-right: -$inuit-global-spacing-unit-small;
 
   > .o-layout__item {
     padding-left: $inuit-global-spacing-unit-small;
-    padding-right: $inuit-global-spacing-unit-small;
   }
 
 }
@@ -122,11 +147,9 @@
 
 .o-layout--large {
   margin-left: -$inuit-global-spacing-unit-large;
-  margin-right: -$inuit-global-spacing-unit-large;
 
   > .o-layout__item {
     padding-left: $inuit-global-spacing-unit-large;
-    padding-right: $inuit-global-spacing-unit-large;
   }
 
 }
@@ -134,23 +157,9 @@
 
 .o-layout--huge {
   margin-left: -$inuit-global-spacing-unit-huge;
-  margin-right: -$inuit-global-spacing-unit-huge;
 
   > .o-layout__item {
     padding-left: $inuit-global-spacing-unit-huge;
-    padding-right: $inuit-global-spacing-unit-huge;
-  }
-
-}
-
-
-.o-layout--flush {
-  margin-left: 0;
-  margin-right: 0;
-
-  > .o-layout__item {
-    padding-left: 0;
-    padding-right: 0;
   }
 
 }
@@ -159,7 +168,7 @@
 
 
 
-/* Vertical alignment modifiers.
+/* Vertical alignment modifiers
    ========================================================================== */
 
 /**
@@ -169,7 +178,7 @@
 .o-layout--middle {
 
   > .o-layout__item {
-    align-self: center;
+    vertical-align: middle;
   }
 
 }
@@ -182,7 +191,36 @@
 .o-layout--bottom {
 
   > .o-layout__item {
-    align-self: flex-end;
+    vertical-align: bottom;
+  }
+
+}
+
+
+/**
+ * Stretch all grid items of each row to have an equal-height.
+ * Please be aware that this modifier class doesn’t take any effect in IE9 and
+ * below and other older browsers due to the lack of `display: flex` support.
+ */
+
+.o-layout--stretch {
+  display: flex;
+  flex-wrap: wrap;
+
+  > .o-layout__item {
+    display: flex;
+  }
+
+  &.o-layout--center {
+    justify-content: center;
+  }
+
+  &.o-layout--right {
+    justify-content: flex-end;
+  }
+
+  &.o-layout--left {
+    justify-content: flex-start;
   }
 
 }
@@ -191,7 +229,7 @@
 
 
 
-/* Fill order modifiers.
+/* Fill order modifiers
    ========================================================================== */
 
 /**
@@ -199,7 +237,12 @@
  */
 
 .o-layout--center {
-  justify-content: center;
+  text-align: center;
+
+  > .o-layout__item {
+    text-align: left;
+  }
+
 }
 
 
@@ -208,7 +251,27 @@
  */
 
 .o-layout--right {
-  justify-content: flex-end;
+  text-align: right;
+
+  > .o-layout__item {
+    text-align: left;
+  }
+
+}
+
+
+/**
+ * Fill up the layout system from the left-hand side. This will likely only be
+ * needed when using in conjunction with `.o-layout--reverse`.
+ */
+
+.o-layout--left {
+  text-align: left;
+
+  > .o-layout__item {
+    text-align: left;
+  }
+
 }
 
 
@@ -217,5 +280,29 @@
  */
 
 .o-layout--reverse {
-  flex-direction: row-reverse;
+  direction: rtl;
+
+  > .o-layout__item {
+    direction: ltr;
+  }
+
+}
+
+
+
+
+
+/* Auto-widths modifier
+   ========================================================================== */
+
+/**
+ * Cause layout items to take up a non-explicit amount of width.
+ */
+
+.o-layout--auto {
+
+  > .o-layout__item {
+    width: auto;
+  }
+
 }
